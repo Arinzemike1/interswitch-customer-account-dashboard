@@ -13,6 +13,7 @@ export default {
         "dark-grey": "#494A53",
         "grey-border-1": "#EDEDF2",
         "grey-border-2": "#DEE6EE",
+        error: "#FF3838",
       },
     },
     fontFamily: {

@@ -15,3 +15,7 @@ body {
   color: #fff;
   background-color: #18425d;
 }
+
+.border-all {
+  border: 1.5px solid #d7dbde;
+}
