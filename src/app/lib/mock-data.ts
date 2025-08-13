@@ -87,6 +87,30 @@ export const transactions: Record<string, Transaction[]> = {
       amount: 100.0,
       balance: 8671.5,
     },
+    {
+      id: 5,
+      date: "2025-08-01",
+      description: "Transfer to current",
+      type: "credit",
+      amount: 1000.0,
+      balance: 9671.5,
+    },
+    {
+      id: 6,
+      date: "2025-08-01",
+      description: "Transfer to loan",
+      type: "credit",
+      amount: 500.0,
+      balance: 10171.5,
+    },
+    {
+      id: 7,
+      date: "2025-08-01",
+      description: "Transfer to overdraft",
+      type: "credit",
+      amount: 200.0,
+      balance: 10371.5,
+    },
   ],
   current: [
     {
