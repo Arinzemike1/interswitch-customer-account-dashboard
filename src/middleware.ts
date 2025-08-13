@@ -13,7 +13,7 @@ export default function middleware(req: NextRequest) {
   }
 
   if (isAuthenticated && pathname === "/auth/login") {
-    return NextResponse.redirect(new URL("/accounts-overview", req.url));
+    return NextResponse.redirect(new URL("/accounts", req.url));
   }
 }
 
