@@ -21,12 +21,12 @@ const IdleTimer = () => {
     if (logoutTimer.current) clearTimeout(logoutTimer.current);
     logoutTimer.current = setTimeout(() => {
       setShowIdleModal(true);
-    }, 1000 * 60 * 1); // 5 minutes
+    }, 1000 * 60 * 5);
   };
 
   const handleStay = () => {
     setShowIdleModal(false);
-    startLogoutTimer(); // Reset the timer
+    startLogoutTimer();
   };
 
   const handleLogout = () => {

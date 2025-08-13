@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={`${montserrat.variable} font-montserrat antialiased`}>
         <Toaster position="top-center" richColors />
         <ReactQueryProvider>{children}</ReactQueryProvider>

@@ -39,6 +39,22 @@ const Input = ({
     setShowPassword(!showPassword);
   };
 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    formik?.handleChange(e);
+
+    if (name === "amount") {
+      const value = e.target.value.replace(/,/g, "");
+
+      if (value !== "") {
+        const formattedAmount = Number(value).toLocaleString();
+
+        formik?.setFieldValue("amount", formattedAmount);
+      } else {
+        formik?.setFieldValue("amount", "");
+      }
+    }
+  };
+
   return (
     <div className={`${label && "pb-6"}`}>
       {label && (
@@ -58,7 +74,7 @@ const Input = ({
           value={value}
           placeholder={placeholder}
           maxLength={maxlength}
-          onChange={onChange}
+          onChange={handleChange}
           {...restProps}
         />
 
