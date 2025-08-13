@@ -108,8 +108,8 @@ export default function TransferForm() {
         className="cursor-pointer"
       />
 
-      <div className="mx-auto p-4 max-w-lg mt-10">
-        <h1 className="text-2xl font-bold mb-6">Funds Transfer</h1>
+      <div className="mx-auto p-10 max-w-lg mt-10 bg-white rounded-lg">
+        <h1 className="text-xl font-bold mb-6">Funds Transfer</h1>
 
         <form onSubmit={formik.handleSubmit}>
           <Select
