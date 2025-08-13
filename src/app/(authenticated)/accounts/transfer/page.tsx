@@ -84,7 +84,6 @@ export default function TransferForm() {
     mutationFn: (payload: TransferFormValues) => transferMoney(payload),
     onSuccess: () => {
       setShowSuccess(true);
-      queryClient.invalidateQueries({ queryKey: ["accounts"] });
       queryClient.invalidateQueries({ queryKey: ["transactions"] });
     },
     onError: () => {
