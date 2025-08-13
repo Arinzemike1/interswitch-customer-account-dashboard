@@ -34,7 +34,7 @@ const Navbar: React.FC<NavbarProps> = ({ openSidebar, setOpenSidebar }) => {
           <div className="flex items-center gap-5 !leading-none">
             {isClient && (
               <p className="text-sm font-semibold !capitalize !text-black">
-                Hi, Arinze
+                Hi, Arinze Ihemedu
               </p>
             )}
           </div>

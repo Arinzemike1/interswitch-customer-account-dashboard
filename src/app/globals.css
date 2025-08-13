@@ -1,9 +1,6 @@
 @import "tailwindcss";
 @config "../../tailwind.config.ts";
 
-html {
-  scroll-behavior: smooth !important;
-}
 
 body {
   margin: 0 auto;

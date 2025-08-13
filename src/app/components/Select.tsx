@@ -33,7 +33,9 @@ const Select = ({
       )}
 
       <select
-        className="rounded-md bg-transparent text-sm box-border border-all placeholder:text-sm placeholder:tracking-normal outline-none focus:border-primary px-2 h-10 w-full"
+        className={`rounded-md bg-transparent text-sm box-border border-all placeholder:text-sm placeholder:tracking-normal outline-none focus:border-primary px-2 h-10 w-full ${
+          className && className
+        }`}
         id={id}
         name={name}
         value={value}

@@ -50,7 +50,7 @@ const Sidebar: React.FC<SidebarProps> = ({ openSidebar, setOpenSidebar }) => {
           </ul>
         </ul>
 
-        <div className="mt-auto mb-12 border-t pl-5 border-[#fbfbfb78] pt-10">
+        <div className="mt-auto mb-24 border-t pl-5 border-[#fbfbfb78] pt-10">
           <div className="flex items-center gap-3">
             <Icon name="logout" />
             <span

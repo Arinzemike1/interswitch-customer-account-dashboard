@@ -12,8 +12,8 @@ interface InputProps {
   name?: string;
   value?: string;
   placeholder?: string;
+  maxlength?: number;
   formik?: FormikProps<any>;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input = ({
@@ -24,8 +24,8 @@ const Input = ({
   name,
   value,
   placeholder,
+  maxlength,
   formik,
-  onChange,
   ...restProps
 }: InputProps) => {
   const errorMessage = formik && name && formik.errors[name];
@@ -35,6 +35,22 @@ const Input = ({
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    formik?.handleChange(e);
+
+    if (name === "amount") {
+      const value = e.target.value.replace(/,/g, "");
+
+      if (value !== "") {
+        const formattedAmount = Number(value).toLocaleString();
+
+        formik?.setFieldValue("amount", formattedAmount);
+      } else {
+        formik?.setFieldValue("amount", "");
+      }
+    }
   };
 
   return (
@@ -55,7 +71,8 @@ const Input = ({
           name={name}
           value={value}
           placeholder={placeholder}
-          onChange={onChange}
+          maxLength={maxlength}
+          onChange={handleChange}
           {...restProps}
         />
 
