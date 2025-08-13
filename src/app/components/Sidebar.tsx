@@ -29,7 +29,7 @@ const Sidebar: React.FC<SidebarProps> = ({ openSidebar, setOpenSidebar }) => {
       >
         <ul className="flex list-none flex-col px-4">
           <li className="pb-20 pt-5 font-semibold mx-auto">
-            <Link href="/dashboard" aria-label="Brand Logo">
+            <Link href="/accounts" aria-label="Brand Logo">
               <Image src="/logo.svg" alt="Logo" width={130} height={34} />
             </Link>
           </li>
@@ -40,7 +40,7 @@ const Sidebar: React.FC<SidebarProps> = ({ openSidebar, setOpenSidebar }) => {
               onClick={() => setOpenSidebar(false)}
             >
               <Link
-                href="/accounts-overview"
+                href="/accounts"
                 className="relative flex h-12 items-center font-medium gap-3 pl-4 z-10 bg-primary text-white rounded-lg"
               >
                 <Icon name="overview" />
