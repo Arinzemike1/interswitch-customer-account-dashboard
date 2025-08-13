@@ -3,13 +3,13 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import ReactQueryProvider from "./components/ReactQueryProvider";
+import IdleTimer from "./components/idleTimer";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-montserrat",
-  display: "swap", // Prevents layout shift and improves loading
-  preload: true,
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -24,9 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} antialiased`}>
+      <body className={`${montserrat.variable} font-montserrat antialiased`}>
         <Toaster position="top-center" richColors />
         <ReactQueryProvider>{children}</ReactQueryProvider>
+        <IdleTimer />
       </body>
     </html>
   );

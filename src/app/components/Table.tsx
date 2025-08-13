@@ -12,7 +12,10 @@ const Table: React.FC<TableProps> = ({ columns, className, children }) => {
         <thead>
           <tr className="text-sm border-b border-[#F2F4F7]">
             {columns.map((column: any, index: number) => (
-              <th key={index} className="text-left whitespace-nowrap font-semibold p-4">
+              <th
+                key={index}
+                className="text-left whitespace-nowrap font-semibold p-4"
+              >
                 {column}
               </th>
             ))}

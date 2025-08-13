@@ -12,6 +12,7 @@ interface InputProps {
   name?: string;
   value?: string;
   placeholder?: string;
+  maxlength?: number;
   formik?: FormikProps<any>;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
@@ -24,6 +25,7 @@ const Input = ({
   name,
   value,
   placeholder,
+  maxlength,
   formik,
   onChange,
   ...restProps
@@ -55,6 +57,7 @@ const Input = ({
           name={name}
           value={value}
           placeholder={placeholder}
+          maxLength={maxlength}
           onChange={onChange}
           {...restProps}
         />
