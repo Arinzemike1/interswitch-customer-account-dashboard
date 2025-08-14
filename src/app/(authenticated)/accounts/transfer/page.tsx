@@ -16,6 +16,7 @@ import Button from "@/app/components/Button";
 import { toast } from "sonner";
 import Link from "next/link";
 import { formatAmount, removeCommasFromValue } from "@/app/lib/utils";
+import Loader from "@/app/components/Loader";
 
 interface Account {
   id: string;
@@ -83,6 +84,7 @@ export default function TransferForm() {
   const { isPending, mutate } = useMutation({
     mutationFn: (payload: TransferFormValues) => transferMoney(payload),
     onSuccess: () => {
+      setShowModal(false);
       setShowSuccess(true);
       queryClient.invalidateQueries({ queryKey: ["transactions"] });
     },
@@ -92,7 +94,6 @@ export default function TransferForm() {
   });
 
   const handleConfirm = async () => {
-    setShowModal(false);
     mutate({
       ...formik.values,
       amount: Number(removeCommasFromValue(amount)),
@@ -152,7 +153,7 @@ export default function TransferForm() {
 
           <Button
             className="w-full mt-5 h-[50px]"
-            disabled={!formik.isValid || isPending}
+            disabled={!formik.isValid}
             primary
           >
             Continue
@@ -184,8 +185,13 @@ export default function TransferForm() {
             >
               Cancel
             </Button>
-            <Button className="w-full" primary onClick={handleConfirm}>
-              Confirm
+            <Button
+              className="w-full"
+              disabled={isPending}
+              primary
+              onClick={handleConfirm}
+            >
+              {isPending ? <Loader forButton /> : "Confirm"}
             </Button>
           </div>
         </Modal>
