@@ -11,7 +11,7 @@ const AuthLayout: React.FC<{ children: ReactNode }> = ({ children }) => {
         </h3>
       </div>
 
-      <div className="flex flex-col md:justify-center px-6 md:px-48 pt-10 md:pt-0 bg-primary">
+      <div className="flex flex-col justify-center px-6 md:px-48 pt-10 md:pt-0 bg-primary">
         {children}
       </div>
     </div>
